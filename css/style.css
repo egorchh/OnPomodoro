@@ -67,14 +67,32 @@ img {
   text-decoration: none;
 }
 
+.navbar__link-descr {
+  position: relative;
+  color: inherit;
+  cursor: pointer;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.navbar__link-descr:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease-out;
+}
+
+.navbar__link-descr:hover::after {
+  width: 100%;
+}
+
 .navbar__icon {
   width: 28px;
   margin-right: 6px;
   margin-bottom: 1.5px;
-}
-
-.navbar__icon:hover {
-  fill: "white";
-  transition: 1s;
 }
 /*# sourceMappingURL=style.css.map */
