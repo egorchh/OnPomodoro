@@ -13,7 +13,6 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
     <header class="header">
       <div class="container">
         <div class="header-wrapper">
@@ -69,5 +68,35 @@
         </div>
       </div>
     </header>
+
+    <section class="timer">
+      <div class="container">
+        <div class="timer-wrapper">
+          <div class="timer-body">
+            <div class="timer-body__mode">
+              <ol class="timer-body__mode-list">
+                <li id="pomodoro" class="timer-body__mode-item">Pomodoro</li>
+                <li id="shortBreak" class="timer-body__mode-item">Short Break</li>
+                <li id="longBreak" class="timer-body__mode-item">Long Break</li>
+              </ol>
+            </div>
+            <div class="timer-body__watch">
+              <span class="timer-body__watch-text">
+                25:00
+              </span>
+            </div>
+            <button id="timer-button" class="timer-body__button">
+              Start
+            </button>
+          </div>
+          <!-- /.timer__body -->
+          <div class="timer-counter"></div>
+          <div class="timer-description"></div>
+        </div>
+        <!-- /.timer-wrapper -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /.timer -->
   </body>
 </html>
