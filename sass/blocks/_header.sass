@@ -1,14 +1,19 @@
 .header
+  max-width: 900px
   height: 75px
+  margin: auto
   background-color: tomato
   display: flex
   justify-content: space-between
+  border-bottom-right-radius: 10px
+  border-bottom-left-radius: 10px
   &-wrapper
     display: flex
     justify-content: space-between
     align-items: center
     max-height: 75px
     min-width: 900px
+    padding: 0px 35px
 .logo
   max-height: 40px
   &__link
@@ -22,7 +27,7 @@
     justify-content: space-between
     &-item
       list-style: none
-      &:not(last-child)
+      &:not(:last-child)
         margin-right: 30px
   &__link
     display: flex

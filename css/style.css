@@ -19,10 +19,14 @@ img {
 }
 
 .header {
+  max-width: 900px;
   height: 75px;
+  margin: auto;
   background-color: tomato;
   display: flex;
   justify-content: space-between;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .header-wrapper {
@@ -31,6 +35,7 @@ img {
   align-items: center;
   max-height: 75px;
   min-width: 900px;
+  padding: 0px 35px;
 }
 
 .logo {
@@ -56,7 +61,7 @@ img {
   list-style: none;
 }
 
-.navbar__list-item:not(last-child) {
+.navbar__list-item:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -130,6 +135,23 @@ img {
   font-size: 20px;
   font-weight: 500;
   color: inherit;
+  cursor: pointer;
+  position: relative;
+}
+
+.timer-body__mode-item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease-out;
+}
+
+.timer-body__mode-item:hover::after {
+  width: 100%;
 }
 
 .timer-body__watch {
@@ -148,6 +170,7 @@ img {
   max-width: 200px;
   border: none;
   border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
   padding: 10px 50px;
   margin: 30px auto 0px auto;
