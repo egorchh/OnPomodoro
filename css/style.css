@@ -6,6 +6,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  font-family: 'Baloo Da 2', cursive;
+  color: white;
 }
 
 img {
@@ -97,7 +99,7 @@ img {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0.4);
   transition: width 0.3s ease-out;
 }
 
@@ -188,7 +190,8 @@ img {
   padding: 10px 50px;
   margin: 40px auto 0px auto;
   font-size: 20px;
-  font-family: inherit;
+  font-family: 'Baloo Da 2', cursive;
+  font-weight: 500;
   color: inherit;
   cursor: pointer;
   box-shadow: 0 5px 0px 0 rgba(255, 255, 255, 0.2);
@@ -274,6 +277,7 @@ img {
   border: 3px dashed rgba(255, 255, 255, 0.3);
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.1);
+  color: white;
   opacity: 0.8;
   cursor: pointer;
 }
@@ -284,12 +288,14 @@ img {
 }
 
 .timer-tasks__creator-text {
+  font-family: 'Baloo Da 2', cursive;
   font-size: 15px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 .description {
   margin-bottom: 40px;
+  color: black;
 }
 
 .description__link {
