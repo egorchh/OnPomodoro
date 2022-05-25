@@ -14,7 +14,11 @@ img {
 
 .first-color {
   background-color: #d95550;
-  min-height: 100vh;
+  min-height: 60em;
+}
+
+.second-color {
+  margin-top: 40px;
 }
 
 .container {
@@ -282,5 +286,53 @@ img {
 .timer-tasks__creator-text {
   font-size: 15px;
   font-weight: normal;
+}
+
+.description {
+  margin-bottom: 40px;
+}
+
+.description__link {
+  text-decoration: none;
+  color: tomato;
+  font-weight: 600;
+}
+
+.description__title {
+  display: block;
+  font-size: 34px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.description__list {
+  list-style: none;
+}
+
+.description__item {
+  font-size: 1.5em;
+}
+
+.description__item-title {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.description__item-text {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.instruction__item {
+  list-style: none;
+  font-size: 18px;
+  font-weight: 30;
+  margin-bottom: 10px;
+}
+
+.instruction__item:last-child {
+  margin-bottom: 40px;
 }
 /*# sourceMappingURL=style.css.map */
