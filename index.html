@@ -13,109 +13,157 @@
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-    <header class="header">
-      <div class="container">
-        <div class="header-wrapper">
-          <div class="logo">
-            <a class="logo__link" href="#">
-              <h2 class="logo__title">OnPomodoro</h2>
-            </a>
-          </div>
-          <div class="navbar">
-            <ol class="navbar__list">
-              <li class="navbar__list-item">
-                <a class="navbar__link" href="#">
-                  <img
-                    class="navbar__icon"
-                    src="img/statistic.svg"
-                    alt="Icon: statistic"
-                  />
-                  <span class="navbar__link-descr">Statistic</span>
-                </a>
-              </li>
-              <li class="navbar__list-item">
-                <a class="navbar__link" href="#">
-                  <img
-                    class="navbar__icon"
-                    src="img/language.svg"
-                    alt="Icon: language"
-                  />
-                  <span class="navbar__link-descr">Language</span>
-                </a>
-              </li>
-              <li class="navbar__list-item">
-                <a class="navbar__link" href="#">
-                  <img
-                    class="navbar__icon"
-                    src="img/settings.svg"
-                    alt="Icon: options"
-                  />
-                  <span class="navbar__link-descr">Options</span>
-                </a>
-              </li>
-              <li class="navbar__list-item">
-                <a class="navbar__link" href="#">
-                  <img
-                    class="navbar__icon"
-                    src="img/login.svg"
-                    alt="Icon: login"
-                  />
-                  <span class="navbar__link-descr">Login</span>
-                </a>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <section class="timer">
-      <div class="container">
-        <div class="timer-wrapper">
-          <div class="timer-body">
-            <div class="timer-body__mode">
-              <ol class="timer-body__mode-list">
-                <li id="pomodoro" class="timer-body__mode-item">Pomodoro</li>
-                <li id="shortBreak" class="timer-body__mode-item">Short Break</li>
-                <li id="longBreak" class="timer-body__mode-item">Long Break</li>
-              </ol>
-            </div>
-            <div class="timer-body__watch">
-              <span class="timer-body__watch-text">
-                25:00
-              </span>
-            </div>
-            <button id="timer-button" class="timer-body__button">
-              <span class="timer-body__button-span">Start</span>
-            </button>
-          </div>
-          <!-- /.timer-body -->
-          <div class="timer-counter">
-            <div class="timer-counter__text">
-              <span class="timer-counter__current">
-                #1
-              </span>
-              <span class="timer-description">Time to focus!</span>
-              <span class="timer-counter__total">
-                #1
-              </span>
-            </div>
-          </div>
-          <!-- /.timer-counter -->
-          <div class="timer-tasks">
-            <div class="timer-tasks__descr">
-              <span class="timer-tasks__descr-text">Tasks</span>
-              <a class="timer-tasks__descr-link" href="#">
-                <img class="timer-tasks__descr-folder" src="img/folder.svg" alt="Icon: folder">
+  <body>
+    <div class="first-color">
+      <header class="header">
+        <div class="container">
+          <div class="header-wrapper">
+            <div class="logo">
+              <a class="logo__link" href="#">
+                <h2 class="logo__title">OnPomodoro</h2>
               </a>
             </div>
+            <div class="navbar">
+              <ol class="navbar__list">
+                <li class="navbar__list-item">
+                  <a class="navbar__link" href="#">
+                    <img
+                      class="navbar__icon"
+                      src="img/statistic.svg"
+                      alt="Icon: statistic"
+                    />
+                    <span class="navbar__link-descr">Statistic</span>
+                  </a>
+                </li>
+                <li class="navbar__list-item">
+                  <a class="navbar__link" href="#">
+                    <img
+                      class="navbar__icon"
+                      src="img/language.svg"
+                      alt="Icon: language"
+                    />
+                    <span class="navbar__link-descr">Language</span>
+                  </a>
+                </li>
+                <li class="navbar__list-item">
+                  <a class="navbar__link" href="#">
+                    <img
+                      class="navbar__icon"
+                      src="img/settings.svg"
+                      alt="Icon: options"
+                    />
+                    <span class="navbar__link-descr">Options</span>
+                  </a>
+                </li>
+                <li class="navbar__list-item">
+                  <a class="navbar__link" href="#">
+                    <img
+                      class="navbar__icon"
+                      src="img/login.svg"
+                      alt="Icon: login"
+                    />
+                    <span class="navbar__link-descr">Login</span>
+                  </a>
+                </li>
+              </ol>
+            </div>
           </div>
-          <!-- /.timer-tasks -->
         </div>
-        <!-- /.timer-wrapper -->
-      </div>
-      <!-- /.container -->
-    </section>
-    <!-- /.timer -->
+      </header>
+      <!-- /.header -->
+      <section class="timer">
+        <div class="container">
+          <div class="timer-wrapper">
+            <div class="timer-body">
+              <div class="timer-body__mode">
+                <ol class="timer-body__mode-list">
+                  <li id="pomodoro" class="timer-body__mode-item">Pomodoro</li>
+                  <li id="shortBreak" class="timer-body__mode-item">
+                    Short Break
+                  </li>
+                  <li id="longBreak" class="timer-body__mode-item">
+                    Long Break
+                  </li>
+                </ol>
+              </div>
+              <div class="timer-body__watch">
+                <span class="timer-body__watch-text"> 25:00 </span>
+              </div>
+              <button id="timer-button" class="timer-body__button">
+                <span class="timer-body__button-span">Start</span>
+              </button>
+            </div>
+            <!-- /.timer-body -->
+            <div class="timer-counter">
+              <div class="timer-counter__text">
+                <span class="timer-counter__current"> #1 </span>
+                <span class="timer-description">Time to focus!</span>
+                <span class="timer-counter__total"> #1 </span>
+              </div>
+            </div>
+            <!-- /.timer-counter -->
+            <div class="timer-tasks">
+              <div class="timer-tasks__descr">
+                <span class="timer-tasks__descr-text">Tasks</span>
+                <a class="timer-tasks__descr-link" href="#">
+                  <img
+                    class="timer-tasks__descr-folder"
+                    src="img/folder.svg"
+                    alt="Icon: folder"
+                  />
+                </a>
+              </div>
+              <div class="timer-tasks__underline"></div>
+              <div class="timer-tasks__creator">
+                <button class="timer-tasks__creator-button">
+                  <img
+                    class="timer-tasks__creator-icon"
+                    src="img/plus.svg"
+                    alt="Icon: plus"
+                  />
+                  <span class="timer-tasks__creator-text"> Add Task </span>
+                </button>
+              </div>
+            </div>
+            <!-- /.timer-tasks -->
+          </div>
+          <!-- /.timer-wrapper -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.timer -->
+    </div>
+    <!-- /.first-color -->
+    <div class="second-color">
+      <section class="description">
+        <t1 class="description__title">Boost your productivity</t1>
+        <ol class="description__list">
+          <li class="description__item">
+            <t2 class="description__item-title">What is OnPromodoro?</t2>
+            <p class="description__item-text"></p>
+          </li>
+          <li class="description__item">
+            <t2 class="description__item-title"
+              >What is Promodoro Technique?</t2
+            >
+            <p class="description__item-text"></p>
+          </li>
+          <li class="description__item">
+            <t2 class="description__item-title">How to use Promodoro Timer?</t2>
+            <p class="description__item-text"></p>
+          </li>
+          <li class="description__item">
+            <t2 class="description__item-title">Features</t2>
+            <p class="description__item-text"></p>
+          </li>
+          <li class="description__item">
+            <t2 class="description__item-title">About author and project</t2>
+            <p class="description__item-text"></p>
+          </li>
+        </ol>
+      </section>
+      <!-- /.description -->
+    </div>
+    <!-- /.second-color -->
   </body>
 </html>
