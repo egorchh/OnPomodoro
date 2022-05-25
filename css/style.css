@@ -187,12 +187,10 @@ img {
 }
 
 .timer-counter {
-  display: flex;
-  flex-direction: column;
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   margin-top: 20px;
-  padding: 20px 20px 30px 20px;
+  padding: 20px;
 }
 
 .timer-counter__text {
@@ -201,9 +199,46 @@ img {
   font-size: 20px;
 }
 
-.timer-description {
+.timer-counter__current {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+}
+
+.timer-counter__total {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+}
+
+.timer-tasks {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 10px 35px;
+}
+
+.timer-tasks__descr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer-tasks__descr-link {
+  display: flex;
+  align-items: center;
+}
+
+.timer-tasks__descr-folder {
+  width: 28px;
+}
+
+.timer-tasks__descr-text {
+  font-size: 20px;
+  line-height: 200%;
 }
 /*# sourceMappingURL=style.css.map */
