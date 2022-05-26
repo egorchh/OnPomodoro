@@ -149,14 +149,14 @@ img {
   position: relative;
 }
 
-.timer-body__mode-item:after {
+.timer-body__mode-item::after {
   content: "";
   display: block;
   position: absolute;
   left: 0;
   top: -4px;
   transform: translateX(-11%);
-  width: 0;
+  width: 0px;
   height: 0px;
   background-color: rgba(255, 255, 255, 0.4);
   transition: width 0.3s ease-out;
@@ -166,7 +166,7 @@ img {
 .timer-body__mode-item:hover::after {
   height: 130%;
   width: 130%;
-  z-index: -1;
+  z-index: 1;
 }
 
 .timer-body__watch {
@@ -176,8 +176,9 @@ img {
 
 .timer-body__watch-text {
   color: white;
-  font-size: 210px;
-  font-weight: bold;
+  font-family: 'Rubik', sans-serif;
+  font-size: 205px;
+  font-weight: 500;
   line-height: 80%;
 }
 
