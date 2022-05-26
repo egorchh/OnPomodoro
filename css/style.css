@@ -341,4 +341,49 @@ img {
 .instruction__item:last-child {
   margin-bottom: 40px;
 }
+
+.footer {
+  min-height: 75px;
+  margin: auto;
+  background-color: tomato;
+  padding: 20px;
+}
+
+.footer-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.footer-list__social {
+  display: flex;
+  align-content: center;
+}
+
+.footer-list:not(:first-child) {
+  margin-top: 10px;
+}
+
+.footer-list__item {
+  text-transform: uppercase;
+}
+
+.footer-list__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.footer-list__link {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+}
+
+.footer-list__icon {
+  width: 34px;
+}
+
+.footer-description {
+  display: flex;
+  justify-content: center;
+}
 /*# sourceMappingURL=style.css.map */

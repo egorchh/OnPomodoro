@@ -1,0 +1,11 @@
+.footer {
+  max-width: 900px;
+  height: 75px;
+  margin: auto;
+  background-color: tomato;
+  display: flex;
+  justify-content: space-between;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+/*# sourceMappingURL=footer.css.map */
