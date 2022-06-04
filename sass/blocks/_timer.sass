@@ -12,6 +12,8 @@
     border-radius: 10px
     margin-top: 20px
     padding: 40px 40px 50px 40px
+    position: relative
+    min-height: 500px
     &__mode
       margin-bottom: 40px
       &-list
@@ -46,14 +48,25 @@
     &__watch
       display: flex
       justify-content: center
+      position: absolute
+      top: 27%
+      left: 50%
+      transform: translateX(-50%)
       &-text
+        text-align: center
+        width: 580px
         color: white
-        font-family: 'Rubik', sans-serif
+        font-family: 'Rubik', sans
         font-size: 205px
         font-weight: 500
         line-height: 80%
+        margin-left: 5px
     &__button
-      max-width: 200px
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 76px
+      min-width: 200px
       border: none
       border-radius: 3px
       background-color: rgba(255, 255, 255, 0.4)
@@ -65,22 +78,28 @@
       font-weight: 500
       color: inherit
       cursor: pointer
-      box-shadow: 0 5px 0px 0 rgba(255, 255, 255, 0.2)
+      box-shadow: 0 6px 0px 0 rgba(255, 255, 255, 0.2)
+      transition: 0.3s
   &-counter
     background-color: rgba(255, 255, 255, 0.15)
     border-radius: 10px
     margin-top: 20px
     padding: 20px
     &__text
+      position: relative
       display: flex
       justify-content: space-evenly
       font-size: 20px
     &__current
+      position: absolute
+      left: 17%
       background-color: rgba(255, 255, 255, 0.3)
       padding-left: 15px
       padding-right: 15px
       border-radius: 5px
     &__total
+      position: absolute
+      right: 17%
       background-color: rgba(255, 255, 255, 0.3)
       padding-left: 15px
       padding-right: 15px
