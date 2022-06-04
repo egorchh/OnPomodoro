@@ -69,12 +69,15 @@ window.addEventListener("DOMContentLoaded", () => {
     timerText = document.querySelector(".timer-body__watch-text"),
     timerDescription = document.querySelector(".timer-description");
 
+  activeMode();
+
   pomodoro.addEventListener("click", () => {
     clearInterval(timeInterval);
     updateTimer();
     timerText.innerHTML = "25:00";
     timerDescription.innerHTML = "Time to focus!";
     timeMode = 1499;
+    activeMode();
   });
 
   shortBreak.addEventListener("click", () => {
@@ -83,6 +86,7 @@ window.addEventListener("DOMContentLoaded", () => {
     timerText.innerHTML = "05:00";
     timerDescription.innerHTML = "Time for a break!";
     timeMode = 299;
+    activeMode();
   });
 
   longBreak.addEventListener("click", () => {
@@ -91,5 +95,22 @@ window.addEventListener("DOMContentLoaded", () => {
     timerText.innerHTML = "15:00";
     timerDescription.innerHTML = "Time for a long break!";
     timeMode = 899;
+    activeMode();
   });
+
+  function activeMode() {
+    if (timeMode === 1499) {
+      pomodoro.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
+      shortBreak.style.backgroundColor = "transparent";
+      longBreak.style.backgroundColor = "transparent";
+    } else if (timeMode === 299) {
+      shortBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
+      pomodoro.style.backgroundColor = "transparent";
+      longBreak.style.backgroundColor = "transparent";
+    } else if (timeMode === 899) {
+      longBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
+      pomodoro.style.backgroundColor = "transparent";
+      shortBreak.style.backgroundColor = "transparent";
+    }
+  }
 });
