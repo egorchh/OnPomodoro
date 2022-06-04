@@ -67,7 +67,11 @@ window.addEventListener("DOMContentLoaded", () => {
     shortBreak = document.querySelector("#short-break"),
     longBreak = document.querySelector("#long-break"),
     timerText = document.querySelector(".timer-body__watch-text"),
-    timerDescription = document.querySelector(".timer-description");
+    timerDescription = document.querySelector(".timer-description"),
+    pomodoroBody = document.querySelector(".first-color"),
+    header = document.querySelector(".header"),
+    footer = document.querySelector(".footer"),
+    descriptionLink = document.querySelectorAll(".description__link");
 
   activeMode();
 
@@ -103,14 +107,38 @@ window.addEventListener("DOMContentLoaded", () => {
       pomodoro.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       shortBreak.style.backgroundColor = "transparent";
       longBreak.style.backgroundColor = "transparent";
+
+      pomodoroBody.style.backgroundColor = "#d95550";
+      header.style.backgroundColor = "tomato";
+      footer.style.backgroundColor = "tomato";
+
+      descriptionLink.forEach((link) => {
+        link.style.color = "tomato";
+      });
     } else if (timeMode === 299) {
       shortBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       pomodoro.style.backgroundColor = "transparent";
       longBreak.style.backgroundColor = "transparent";
+
+      pomodoroBody.style.backgroundColor = "#018786";
+      header.style.backgroundColor = "#03c2af";
+      footer.style.backgroundColor = "#03c2af";
+
+      descriptionLink.forEach((link) => {
+        link.style.color = "#03c2af";
+      });
     } else if (timeMode === 899) {
       longBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       pomodoro.style.backgroundColor = "transparent";
       shortBreak.style.backgroundColor = "transparent";
+
+      pomodoroBody.style.backgroundColor = "#0D47A1";
+      header.style.backgroundColor = "#1976D2";
+      footer.style.backgroundColor = "#1976D2";
+
+      descriptionLink.forEach((link) => {
+        link.style.color = "#1976D2";
+      });
     }
   }
 });
