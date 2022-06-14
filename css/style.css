@@ -23,16 +23,6 @@ img {
   margin-top: 40px;
 }
 
-.short-break__body {
-  background-color: #018786;
-  min-height: 60em;
-}
-
-.long-break__body {
-  background-color: #d602ee;
-  min-height: 60em;
-}
-
 .container {
   max-width: 900px;
   margin: auto;
@@ -402,5 +392,104 @@ img {
 .footer-description {
   display: flex;
   justify-content: center;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: auto;
+}
+
+.modal__container {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 500px;
+  height: 700px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 45px 20px 60px 20px;
+  z-index: 99999;
+  color: black;
+}
+
+.modal__close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.modal__close-img {
+  width: 30px;
+  transition: transform .8s ease;
+  cursor: pointer;
+}
+
+.modal__close-img:hover {
+  transform: rotate(180deg);
+}
+
+.modal-language {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-language__title {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.modal-language__list {
+  list-style: none;
+  font-size: 1.5em;
+}
+
+.modal-language__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
+  padding: 5px 0 5px 0;
+  min-width: 350px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(104, 104, 104, 0.2);
+  border-radius: 5px;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.modal-language__item:hover {
+  transition: 1s ease-in-out;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.modal-language__item:hover svg {
+  stroke-dashoffset: 0;
+}
+
+.modal-language__item-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.3);
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  transition: .8s ease-in-out;
+}
+
+.modal-language__img {
+  width: 34px;
+  margin-right: 15px;
 }
 /*# sourceMappingURL=style.css.map */

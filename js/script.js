@@ -71,7 +71,9 @@ window.addEventListener("DOMContentLoaded", () => {
     pomodoroBody = document.querySelector(".first-color"),
     header = document.querySelector(".header"),
     footer = document.querySelector(".footer"),
-    descriptionLink = document.querySelectorAll(".description__link");
+    descriptionLink = document.querySelectorAll(".description__link"),
+    timerCurrent = document.querySelector(".timer-counter__current"),
+    timerTotal = document.querySelector(".timer-counter__total");
 
   activeMode();
 
@@ -80,6 +82,7 @@ window.addEventListener("DOMContentLoaded", () => {
     updateTimer();
     timerText.innerHTML = "25:00";
     timerDescription.innerHTML = "Time to focus!";
+    // timeMode = 1499;
     timeMode = 1499;
     activeMode();
   });
@@ -107,6 +110,9 @@ window.addEventListener("DOMContentLoaded", () => {
       pomodoro.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       shortBreak.style.backgroundColor = "transparent";
       longBreak.style.backgroundColor = "transparent";
+      pomodoro.style.border = "none";
+      shortBreak.style.border = "2px solid rgba(255, 255, 255, 0.4)";
+      longBreak.style.border = "2px solid rgba(255, 255, 255, 0.4)";
 
       pomodoroBody.style.backgroundColor = "#d95550";
       header.style.backgroundColor = "tomato";
@@ -119,6 +125,9 @@ window.addEventListener("DOMContentLoaded", () => {
       shortBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       pomodoro.style.backgroundColor = "transparent";
       longBreak.style.backgroundColor = "transparent";
+      shortBreak.style.border = "none";
+      pomodoro.style.border = "2px solid rgba(255, 255, 255, 0.4)";
+      longBreak.style.border = "2px solid rgba(255, 255, 255, 0.4)";
 
       pomodoroBody.style.backgroundColor = "#018786";
       header.style.backgroundColor = "#03c2af";
@@ -131,6 +140,9 @@ window.addEventListener("DOMContentLoaded", () => {
       longBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       pomodoro.style.backgroundColor = "transparent";
       shortBreak.style.backgroundColor = "transparent";
+      longBreak.style.border = "none";
+      pomodoro.style.border = "2px solid rgba(255, 255, 255, 0.4)";
+      shortBreak.style.border = "2px solid rgba(255, 255, 255, 0.4)";
 
       pomodoroBody.style.backgroundColor = "#0D47A1";
       header.style.backgroundColor = "#1976D2";
@@ -142,3 +154,52 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+// function Calculator() {
+//   this.read = function () {
+//     this.a = +prompt("a?", "");
+//     this.b = +prompt("b?", "");
+//   };
+//   this.sum = function () {
+//     return this.a + this.b;
+//   };
+//   this.mul = function () {
+//     return this.a * this.b;
+//   };
+// }
+
+// let calculator = new Calculator();
+// calculator.read();
+
+// alert("Sum=" + calculator.sum());
+// alert("Mul=" + calculator.mul());
+
+// const user = {
+//   name: "Egor",
+//   adress: {
+//     street: {
+//       name: "Kantemir",
+//       number: 24,
+//     },
+//     city: "SPB",
+//   },
+// };
+
+// console.log(user.name);
+// console.log(user?.adress?.street?.name);
+
+var words = [
+  "Ночь",
+  "Улица",
+  "Фонарь",
+  "Аптека",
+  "Бессмысленный",
+  "Тусклый",
+  "Свет",
+];
+
+console.log(getLastElementOfArray(words)); // возвращает Свет;
+
+function getLastElementOfArray(array) {
+  return array.pop();
+}
