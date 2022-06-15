@@ -153,53 +153,36 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+
+  // modal
+
+  // modal-language доделать переключение языков
+
+  const closeModal = document.querySelector(".modal__close-img"),
+    ruLang = document.getElementById("ru"),
+    engLang = document.getElementById("eng"),
+    langBtn = document.getElementById("language"),
+    modalContainer = document.querySelector(".modal__container"),
+    modal = document.querySelector(".modal");
+
+  function showModal() {
+    modal.style.display = "block";
+  }
+  function hideModal() {
+    modal.style.display = "none";
+  }
+
+  window.addEventListener("click", (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  langBtn.addEventListener("click", () => {
+    showModal();
+  });
+
+  closeModal.addEventListener("click", () => {
+    hideModal();
+  });
 });
-
-// function Calculator() {
-//   this.read = function () {
-//     this.a = +prompt("a?", "");
-//     this.b = +prompt("b?", "");
-//   };
-//   this.sum = function () {
-//     return this.a + this.b;
-//   };
-//   this.mul = function () {
-//     return this.a * this.b;
-//   };
-// }
-
-// let calculator = new Calculator();
-// calculator.read();
-
-// alert("Sum=" + calculator.sum());
-// alert("Mul=" + calculator.mul());
-
-// const user = {
-//   name: "Egor",
-//   adress: {
-//     street: {
-//       name: "Kantemir",
-//       number: 24,
-//     },
-//     city: "SPB",
-//   },
-// };
-
-// console.log(user.name);
-// console.log(user?.adress?.street?.name);
-
-var words = [
-  "Ночь",
-  "Улица",
-  "Фонарь",
-  "Аптека",
-  "Бессмысленный",
-  "Тусклый",
-  "Свет",
-];
-
-console.log(getLastElementOfArray(words)); // возвращает Свет;
-
-function getLastElementOfArray(array) {
-  return array.pop();
-}
