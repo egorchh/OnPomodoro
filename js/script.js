@@ -110,9 +110,9 @@ window.addEventListener("DOMContentLoaded", () => {
       pomodoro.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       shortBreak.style.backgroundColor = "transparent";
       longBreak.style.backgroundColor = "transparent";
-      pomodoro.style.border = "none";
-      shortBreak.style.border = "2px solid rgba(255, 255, 255, 0.4)";
-      longBreak.style.border = "2px solid rgba(255, 255, 255, 0.4)";
+      // pomodoro.style.border = "none";
+      // shortBreak.style.border = "rgba(255, 255, 255, 0.4)";
+      // longBreak.style.border = "rgba(255, 255, 255, 0.4)";
 
       pomodoroBody.style.backgroundColor = "#d95550";
       header.style.backgroundColor = "tomato";
@@ -125,9 +125,9 @@ window.addEventListener("DOMContentLoaded", () => {
       shortBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       pomodoro.style.backgroundColor = "transparent";
       longBreak.style.backgroundColor = "transparent";
-      shortBreak.style.border = "none";
-      pomodoro.style.border = "2px solid rgba(255, 255, 255, 0.4)";
-      longBreak.style.border = "2px solid rgba(255, 255, 255, 0.4)";
+      // shortBreak.style.border = "none";
+      // pomodoro.style.border = "rgba(255, 255, 255, 0.4)";
+      // longBreak.style.border = "rgba(255, 255, 255, 0.4)";
 
       pomodoroBody.style.backgroundColor = "#018786";
       header.style.backgroundColor = "#03c2af";
@@ -140,9 +140,9 @@ window.addEventListener("DOMContentLoaded", () => {
       longBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       pomodoro.style.backgroundColor = "transparent";
       shortBreak.style.backgroundColor = "transparent";
-      longBreak.style.border = "none";
-      pomodoro.style.border = "2px solid rgba(255, 255, 255, 0.4)";
-      shortBreak.style.border = "2px solid rgba(255, 255, 255, 0.4)";
+      // longBreak.style.border = "none";
+      // pomodoro.style.border = "rgba(255, 255, 255, 0.4)";
+      // shortBreak.style.border = "rgba(255, 255, 255, 0.4)";
 
       pomodoroBody.style.backgroundColor = "#0D47A1";
       header.style.backgroundColor = "#1976D2";
@@ -159,10 +159,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // modal-language доделать переключение языков
 
   const closeModal = document.querySelector(".modal__close-img"),
-    ruLang = document.getElementById("ru"),
-    engLang = document.getElementById("eng"),
     langBtn = document.getElementById("language"),
-    modalContainer = document.querySelector(".modal__container"),
     modal = document.querySelector(".modal");
 
   function showModal() {

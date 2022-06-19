@@ -61,7 +61,9 @@
                       src="img/statistic.svg"
                       alt="Icon: statistic"
                     />
-                    <span class="navbar__link-descr">Statistic</span>
+                    <span id="statisticSpan" class="navbar__link-descr"
+                      >Statistic</span
+                    >
                   </a>
                 </li>
                 <li id="language" class="navbar__list-item">
@@ -71,17 +73,21 @@
                       src="img/language.svg"
                       alt="Icon: language"
                     />
-                    <span class="navbar__link-descr">Language</span>
+                    <span id="languageSpan" class="navbar__link-descr"
+                      >Language</span
+                    >
                   </a>
                 </li>
-                <li id="options" class="navbar__list-item">
+                <li id="settings" class="navbar__list-item">
                   <a class="navbar__link" href="#">
                     <img
                       class="navbar__icon"
                       src="img/settings.svg"
-                      alt="Icon: options"
+                      alt="Icon: settings"
                     />
-                    <span class="navbar__link-descr">Options</span>
+                    <span id="settingsSpan" class="navbar__link-descr"
+                      >Settings</span
+                    >
                   </a>
                 </li>
                 <li id="login" class="navbar__list-item">
@@ -91,7 +97,7 @@
                       src="img/login.svg"
                       alt="Icon: login"
                     />
-                    <span class="navbar__link-descr">Login</span>
+                    <span id="loginSpan" class="navbar__link-descr">Login</span>
                   </a>
                 </li>
               </ol>
@@ -107,10 +113,18 @@
               <div class="timer-body__mode">
                 <ol class="timer-body__mode-list">
                   <li id="pomodoro" class="timer-body__mode-item">Pomodoro</li>
-                  <li id="short-break" class="timer-body__mode-item">
+                  <li
+                    data-name="shortBreak"
+                    id="short-break"
+                    class="timer-body__mode-item"
+                  >
                     Short Break
                   </li>
-                  <li id="long-break" class="timer-body__mode-item">
+                  <li
+                    data-name="longBreak"
+                    id="long-break"
+                    class="timer-body__mode-item"
+                  >
                     Long Break
                   </li>
                 </ol>
@@ -357,7 +371,7 @@
               />
               <span class="modal-language__text">Russian</span>
             </li>
-            <li id="eng" class="modal-language__item">
+            <li id="en" class="modal-language__item">
               <svg
                 width="100%"
                 height="100%"
@@ -396,5 +410,6 @@
     </div>
     <!-- /.modal -->
     <script src="js/script.js"></script>
+    <script src="js/langs.js"></script>
   </body>
 </html>
