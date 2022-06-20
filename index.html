@@ -133,7 +133,9 @@
                 <span class="timer-body__watch-text">25:00</span>
               </div>
               <button id="timer-button" class="timer-body__button">
-                <span class="timer-body__button-span">Start</span>
+                <span data-name="start" class="timer-body__button-span"
+                  >Start</span
+                >
               </button>
             </div>
             <!-- /.timer-body -->
@@ -147,7 +149,7 @@
             <!-- /.timer-counter -->
             <div class="timer-tasks">
               <div class="timer-tasks__descr">
-                <span class="timer-tasks__descr-text">Tasks</span>
+                <span id="tasks" class="timer-tasks__descr-text">Tasks</span>
                 <a class="timer-tasks__descr-link" href="#">
                   <img
                     class="timer-tasks__descr-folder"
@@ -164,7 +166,9 @@
                     src="img/plus.svg"
                     alt="Icon: plus"
                   />
-                  <span class="timer-tasks__creator-text"> Add Task </span>
+                  <span id="addTask" class="timer-tasks__creator-text">
+                    Add Task
+                  </span>
                 </button>
               </div>
             </div>
@@ -180,15 +184,19 @@
     <div class="second-color">
       <section class="description">
         <div class="container">
-          <t1 class="description__title">Boost your productivity</t1>
+          <t1 data-name="descrTitle" class="description__title"
+            >Boost your productivity</t1
+          >
           <ol class="description__list">
             <li class="description__item">
-              <t2 class="description__item-title">What is OnPromodoro?</t2>
-              <p class="description__item-text">
-                <b>OnPomodoro</b> is a customizable pomodoro timer that works on
-                desktop & mobile browser. The aim of this app is to help you
-                focus on any task you are working on, such as study, writing, or
-                coding. This app is inspired by
+              <t2 id="whatIsOnPomodoro" class="description__item-title"
+                >What is OnPomodoro?</t2
+              >
+              <p id="onPomodoroIs" class="description__item-text">
+                <b class="bold">OnPomodoro</b> is a customizable pomodoro timer
+                that works on desktop & mobile browser. The aim of this app is
+                to help you focus on any task you are working on, such as study,
+                writing, or coding. This app is inspired by
                 <a
                   class="description__link"
                   href="https://todoist.com/productivity-methods/pomodoro-technique"
@@ -200,10 +208,10 @@
               </p>
             </li>
             <li class="description__item">
-              <t2 class="description__item-title"
+              <t2 id="pomodoroTechniqueTitle" class="description__item-title"
                 >What is Promodoro Technique?</t2
               >
-              <p class="description__item-text">
+              <p id="pomodoroTechnique" class="description__item-text">
                 The Pomodoro Technique is created by Francesco Cirillo for a
                 more productive way to work and study. The technique uses a
                 timer to break down work into intervals, traditionally 25
@@ -220,52 +228,64 @@
               </p>
             </li>
             <li class="description__item">
-              <t2 class="description__item-title"
+              <t2 id="howToUseTitle" class="description__item-title"
                 >How to use Promodoro Timer?</t2
               >
-              <ol class="description_item-instruction">
+              <ol id="howToUse" class="description_item-instruction">
                 <li class="instruction__item">
-                  1. <b>Add tasks</b> to work on today
+                  1. <b class="bold">Add tasks</b> to work on today
                 </li>
                 <li class="instruction__item">
-                  2. <b>Set estimate pomodoros</b> (1 = 25min of work) for each
-                  tasks
+                  2. <b class="bold">Set estimate pomodoros</b> (1 = 25min of
+                  work) for each tasks
                 </li>
                 <li class="instruction__item">
-                  3. <b>Select a task</b> to work on
+                  3. <b class="bold">Select a task</b> to work on
                 </li>
                 <li class="instruction__item">
-                  4. <b>Start timer</b> and focus on the task for 25 minutes
+                  4. <b class="bold">Start timer</b> and focus on the task for
+                  25 minutes
                 </li>
                 <li class="instruction__item">
-                  5. <b>Take a break</b> for 5 minutes when the alarm ring
+                  5. <b class="bold">Take a break</b> for 5 minutes when the
+                  alarm ring
                 </li>
                 <li class="instruction__item">
-                  6. <b>Iterate</b> 3-5 until you finish the tasks
-                </li>
-              </ol>
-            </li>
-            <li class="description__item">
-              <t2 class="description__item-title">Features</t2>
-              <ol class="description_item-instruction">
-                <li class="instruction__item">
-                  1. <b>Responsive design</b> that works with desktop and mobile
-                </li>
-                <li class="instruction__item">
-                  2. <b>Color transition</b> to switch moods between work time
-                  and rest time
-                </li>
-                <li class="instruction__item">
-                  3. <b>Audio notification</b> at the end of a timer period
-                </li>
-                <li class="instruction__item">
-                  4. <b>Customizable timer</b> intervals to suit your preference
+                  6. <b class="bold">Iterate</b> 3-5 until you finish the tasks
                 </li>
               </ol>
             </li>
             <li class="description__item">
-              <t2 class="description__item-title">About author and project</t2>
-              <p class="description__item-text">
+              <t2 id="featuresTitle" class="description__item-title"
+                >Features</t2
+              >
+              <ol id="features" class="description_item-instruction">
+                <li class="instruction__item">
+                  1. <b class="bold">Responsive design</b> that works with
+                  desktop and mobile
+                </li>
+                <li class="instruction__item">
+                  2. <b class="bold">Color transition</b> to switch moods
+                  between work time and rest time
+                </li>
+                <li class="instruction__item">
+                  3. <b class="bold">Audio notification</b> at the end of a
+                  timer period
+                </li>
+                <li class="instruction__item">
+                  4. <b class="bold">Customizable timer</b> intervals to suit
+                  your preference
+                </li>
+                <li class="instruction__item">
+                  5. <b class="bold">Multiple interface languages</b>
+                </li>
+              </ol>
+            </li>
+            <li class="description__item">
+              <t2 id="aboutTitle" class="description__item-title"
+                >About author and project</t2
+              >
+              <p id="about" class="description__item-text">
                 Hi! My name is
                 <a
                   class="description__link"
@@ -294,16 +314,22 @@
           <div class="footer-wrapper">
             <ol class="footer-list footer-list__information">
               <li class="footer-list__item">
-                <a class="footer-list__link" href="#">home</a>
+                <a data-name="home" class="footer-list__link" href="#">home</a>
               </li>
               <li class="footer-list__item">
-                <a class="footer-list__link" href="#">privacy</a>
+                <a data-name="privacy" class="footer-list__link" href="#"
+                  >privacy</a
+                >
               </li>
               <li class="footer-list__item">
-                <a class="footer-list__link" href="#">contacts</a>
+                <a data-name="contacts" class="footer-list__link" href="#"
+                  >contacts</a
+                >
               </li>
               <li class="footer-list__item">
-                <a class="footer-list__link" href="#">simple page</a>
+                <a data-name="simplePage" class="footer-list__link" href="#"
+                  >simple page</a
+                >
               </li>
             </ol>
             <ol class="footer-list footer-list__social">
@@ -334,7 +360,7 @@
                 </a>
               </li>
             </ol>
-            <span class="footer-description">
+            <span id="madeWithLove" class="footer-description">
               Made with love by Egor Podolskij
             </span>
           </div>

@@ -352,6 +352,10 @@ img {
   margin-bottom: 40px;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 .footer {
   min-height: 75px;
   margin: auto;

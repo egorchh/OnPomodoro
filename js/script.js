@@ -38,6 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
     timer.innerHTML = `${getZero(minutes)}:${getZero(seconds)}`;
 
     buttonText.innerHTML = "START";
+    buttonText.dataset.name = "start";
     timerButton.style.bottom = "76px";
     timerButton.style.boxShadow = "0 7px 0px 0 rgba(255, 255, 255, 0.2)";
 
@@ -51,11 +52,13 @@ window.addEventListener("DOMContentLoaded", () => {
     if (clickCounter % 2 !== 0) {
       timeInterval = setInterval(setTimer, 1000);
       buttonText.innerHTML = "STOP";
+      buttonText.dataset.name = "stop";
       timerButton.style.boxShadow = "none";
       timerButton.style.bottom = "70px";
     } else {
       clearInterval(timeInterval);
       buttonText.innerHTML = "START";
+      buttonText.dataset.name = "start";
       timerButton.style.bottom = "76px";
       timerButton.style.boxShadow = "0 7px 0px 0 rgba(255, 255, 255, 0.2)";
     }
@@ -82,7 +85,6 @@ window.addEventListener("DOMContentLoaded", () => {
     updateTimer();
     timerText.innerHTML = "25:00";
     timerDescription.innerHTML = "Time to focus!";
-    // timeMode = 1499;
     timeMode = 1499;
     activeMode();
   });
