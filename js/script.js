@@ -1,3 +1,5 @@
+import changeLinkColor from "./langs.js";
+
 window.addEventListener("DOMContentLoaded", () => {
   function getZero(number) {
     if (number >= 0 && number <= 9) {
@@ -6,63 +8,6 @@ window.addEventListener("DOMContentLoaded", () => {
       return number;
     }
   }
-
-  // Таймер
-
-  const timerButton = document.querySelector("#timer-button"),
-    buttonText = document.querySelector(".timer-body__button-span"),
-    timer = document.querySelector(".timer-body__watch-text");
-
-  let timeMode = 1499,
-    clickCounter = 0,
-    timeInterval;
-
-  function setTimer() {
-    let minutes = Math.floor(timeMode / 60),
-      seconds = timeMode % 60;
-
-    timer.innerHTML = `${getZero(minutes)}:${getZero(seconds)}`;
-
-    timeMode--;
-
-    if (timeMode === -1) {
-      clearInterval(timeInterval); // Необходимо добавить переключение режима
-      timer.innerHTML = `00:00`;
-    }
-  }
-
-  function updateTimer() {
-    let minutes = Math.floor(timeMode / 60),
-      seconds = timeMode % 60;
-
-    timer.innerHTML = `${getZero(minutes)}:${getZero(seconds)}`;
-
-    buttonText.innerHTML = "START";
-    buttonText.dataset.name = "start";
-    timerButton.style.bottom = "76px";
-    timerButton.style.boxShadow = "0 7px 0px 0 rgba(255, 255, 255, 0.2)";
-
-    if (clickCounter % 2 !== 0) {
-      clickCounter--;
-    }
-  }
-
-  timerButton.addEventListener("click", () => {
-    clickCounter++;
-    if (clickCounter % 2 !== 0) {
-      timeInterval = setInterval(setTimer, 1000);
-      buttonText.innerHTML = "STOP";
-      buttonText.dataset.name = "stop";
-      timerButton.style.boxShadow = "none";
-      timerButton.style.bottom = "70px";
-    } else {
-      clearInterval(timeInterval);
-      buttonText.innerHTML = "START";
-      buttonText.dataset.name = "start";
-      timerButton.style.bottom = "76px";
-      timerButton.style.boxShadow = "0 7px 0px 0 rgba(255, 255, 255, 0.2)";
-    }
-  });
 
   // Смена режима работы страницы (pomodoro, short break, long break)
 
@@ -76,89 +21,168 @@ window.addEventListener("DOMContentLoaded", () => {
     footer = document.querySelector(".footer"),
     descriptionLink = document.querySelectorAll(".description__link"),
     timerCurrent = document.querySelector(".timer-counter__current"),
-    timerTotal = document.querySelector(".timer-counter__total");
+    timerTotal = document.querySelector(".timer-counter__total"),
+    timer = document.querySelector(".timer-body__watch-text"),
+    timerButton = document.querySelector("#timer-button"),
+    buttonText = document.querySelector(".timer-body__button-span");
 
-  activeMode();
+  let timeMode = +localStorage.getItem("timeMode") || 1499,
+    clickCounter = 0,
+    timeInterval;
+
+  activeMode(timeMode);
+  updateTimer(timeMode);
 
   pomodoro.addEventListener("click", () => {
-    clearInterval(timeInterval);
-    updateTimer();
-    timerText.innerHTML = "25:00";
-    timerDescription.innerHTML = "Time to focus!";
+    localStorage.setItem("timeMode", 1499);
     timeMode = 1499;
-    activeMode();
+
+    clearInterval(timeInterval);
+    updateTimer(+localStorage.getItem("timeMode"));
+    timerText.innerHTML = "25:00";
+    if (localStorage.getItem("language") === "ru") {
+      timerDescription.innerHTML = "Время учиться!";
+    } else {
+      timerDescription.innerHTML = "Time to focus!";
+    }
+
+    activeMode(+localStorage.getItem("timeMode"));
   });
 
   shortBreak.addEventListener("click", () => {
-    clearInterval(timeInterval);
-    updateTimer();
-    timerText.innerHTML = "05:00";
-    timerDescription.innerHTML = "Time for a break!";
+    localStorage.setItem("timeMode", 299);
     timeMode = 299;
-    activeMode();
+
+    clearInterval(timeInterval);
+    updateTimer(+localStorage.getItem("timeMode"));
+    timerText.innerHTML = "05:00";
+    if (localStorage.getItem("language") === "ru") {
+      timerDescription.innerHTML = "Время сделать перерыв!";
+    } else {
+      timerDescription.innerHTML = "Time for a break!";
+    }
+
+    activeMode(+localStorage.getItem("timeMode"));
   });
 
   longBreak.addEventListener("click", () => {
-    clearInterval(timeInterval);
-    updateTimer();
-    timerText.innerHTML = "15:00";
-    timerDescription.innerHTML = "Time for a long break!";
+    localStorage.setItem("timeMode", 899);
     timeMode = 899;
-    activeMode();
+
+    clearInterval(timeInterval);
+    updateTimer(+localStorage.getItem("timeMode"));
+    timerText.innerHTML = "15:00";
+    if (localStorage.getItem("language") === "ru") {
+      timerDescription.innerHTML = "Время отдохнуть!";
+    } else {
+      timerDescription.innerHTML = "Time for a long break!";
+    }
+
+    activeMode(+localStorage.getItem("timeMode"));
   });
 
-  function activeMode() {
+  pomodoro.style.transition = "background-color 0.3s";
+  shortBreak.style.transition = "background-color 0.3s";
+  longBreak.style.transition = "background-color 0.3s";
+
+  const firstBackColor = document.querySelector(".first-color");
+
+  function activeMode(timeMode) {
     if (timeMode === 1499) {
       pomodoro.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       shortBreak.style.backgroundColor = "transparent";
       longBreak.style.backgroundColor = "transparent";
-      // pomodoro.style.border = "none";
-      // shortBreak.style.border = "rgba(255, 255, 255, 0.4)";
-      // longBreak.style.border = "rgba(255, 255, 255, 0.4)";
 
       pomodoroBody.style.backgroundColor = "#d95550";
       header.style.backgroundColor = "tomato";
       footer.style.backgroundColor = "tomato";
 
-      descriptionLink.forEach((link) => {
-        link.style.color = "tomato";
-      });
+      changeLinkColor();
     } else if (timeMode === 299) {
       shortBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       pomodoro.style.backgroundColor = "transparent";
       longBreak.style.backgroundColor = "transparent";
-      // shortBreak.style.border = "none";
-      // pomodoro.style.border = "rgba(255, 255, 255, 0.4)";
-      // longBreak.style.border = "rgba(255, 255, 255, 0.4)";
 
       pomodoroBody.style.backgroundColor = "#018786";
       header.style.backgroundColor = "#03c2af";
       footer.style.backgroundColor = "#03c2af";
 
-      descriptionLink.forEach((link) => {
-        link.style.color = "#03c2af";
-      });
+      changeLinkColor();
     } else if (timeMode === 899) {
       longBreak.style.backgroundColor = "rgba(255, 255, 255, 0.4)";
       pomodoro.style.backgroundColor = "transparent";
       shortBreak.style.backgroundColor = "transparent";
-      // longBreak.style.border = "none";
-      // pomodoro.style.border = "rgba(255, 255, 255, 0.4)";
-      // shortBreak.style.border = "rgba(255, 255, 255, 0.4)";
 
       pomodoroBody.style.backgroundColor = "#0D47A1";
       header.style.backgroundColor = "#1976D2";
       footer.style.backgroundColor = "#1976D2";
 
-      descriptionLink.forEach((link) => {
-        link.style.color = "#1976D2";
-      });
+      changeLinkColor();
     }
   }
 
+  // Таймер
+
+  function setTimer() {
+    let minutes = Math.floor(timeMode / 60),
+      seconds = timeMode % 60;
+
+    timer.innerHTML = `${getZero(minutes)}:${getZero(seconds)}`;
+
+    timeMode -= 1;
+
+    if (timeMode === -1) {
+      clearInterval(timeInterval); // Необходимо добавить переключение режима
+      timer.innerHTML = `00:00`;
+    }
+  }
+
+  function updateTimer(timeMode) {
+    let minutes = Math.floor((+timeMode + 1) / 60),
+      seconds = (+timeMode + 1) % 60;
+
+    timer.innerHTML = `${getZero(minutes)}:${getZero(seconds)}`;
+
+    if (localStorage.getItem("language") === "ru") {
+      buttonText.innerHTML = "СТАРТ";
+    } else {
+      buttonText.innerHTML = "START";
+    }
+    timerButton.style.bottom = "76px";
+    timerButton.style.boxShadow = "0 7px 0px 0 rgba(255, 255, 255, 0.2)";
+
+    if (clickCounter % 2 !== 0) {
+      clickCounter--;
+    }
+  }
+
+  timerButton.addEventListener("click", () => {
+    clickCounter++;
+    if (clickCounter % 2 !== 0) {
+      timeInterval = setInterval(setTimer, 1000);
+
+      if (localStorage.getItem("language") === "ru") {
+        buttonText.innerHTML = "СТОП";
+      } else {
+        buttonText.innerHTML = "STOP";
+      }
+      timerButton.style.boxShadow = "none";
+      timerButton.style.bottom = "70px";
+    } else {
+      clearInterval(timeInterval);
+      if (localStorage.getItem("language") === "ru") {
+        buttonText.innerHTML = "СТАРТ";
+      } else {
+        buttonText.innerHTML = "START";
+      }
+      timerButton.style.bottom = "76px";
+      timerButton.style.boxShadow = "0 7px 0px 0 rgba(255, 255, 255, 0.2)";
+    }
+  });
+
   // modal
 
-  // modal-language доделать переключение языков
+  // modal-language
 
   const closeModal = document.querySelector(".modal__close-img"),
     langBtn = document.getElementById("language"),

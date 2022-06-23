@@ -17,10 +17,12 @@ img {
 .first-color {
   background-color: #d95550;
   min-height: 60em;
+  transition: background-color 0.5s ease-in-out 0s;
 }
 
 .second-color {
   margin-top: 40px;
+  transition: background-color 0.5s ease-in-out 0s;
 }
 
 .container {
@@ -37,6 +39,7 @@ img {
   justify-content: space-between;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  transition: background-color 0.5s ease-in-out 0s;
 }
 
 .header-wrapper {
@@ -50,6 +53,7 @@ img {
 
 .logo {
   max-height: 40px;
+  font-family: "Baloo Da 2", cursive;
 }
 
 .logo__link {
@@ -191,10 +195,10 @@ img {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
-  padding: 10px 50px;
+  padding: 15px 50px;
   margin: 40px auto 0px auto;
-  font-size: 20px;
-  font-family: 'Baloo Da 2', cursive;
+  font-size: 18px;
+  font-family: 'Nunito', sans-serif;
   font-weight: 500;
   color: inherit;
   cursor: pointer;
@@ -206,6 +210,7 @@ img {
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   margin-top: 20px;
+  min-height: 74px;
   padding: 20px;
 }
 
@@ -309,8 +314,8 @@ img {
 }
 
 .description__link {
-  text-decoration: none;
   color: tomato;
+  text-decoration: none;
   font-weight: 600;
 }
 
@@ -356,11 +361,24 @@ img {
   font-weight: 600;
 }
 
+.pomodoro {
+  color: tomato;
+}
+
+.shortBreak {
+  color: #03c2af;
+}
+
+.longBreak {
+  color: #1976D2;
+}
+
 .footer {
   min-height: 75px;
   margin: auto;
   background-color: tomato;
   padding: 20px;
+  transition: background-color 0.5s ease-in-out 0s;
 }
 
 .footer-list {
@@ -450,14 +468,16 @@ img {
 }
 
 .modal-language__title {
-  font-size: 2em;
+  font-size: 30px;
   font-weight: 500;
   margin-bottom: 20px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .modal-language__list {
   list-style: none;
-  font-size: 1.5em;
+  font-size: 24px;
+  font-family: "Baloo Da 2", cursive;
 }
 
 .modal-language__item {
@@ -470,30 +490,14 @@ img {
   min-width: 350px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid rgba(104, 104, 104, 0.2);
+  border: 2.5px solid rgba(104, 104, 104, 0.2);
   border-radius: 5px;
   outline: none;
-  transition: 1s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .modal-language__item:hover {
-  transition: 1s ease-in-out;
   background: rgba(0, 0, 0, 0.1);
-}
-
-.modal-language__item:hover svg {
-  stroke-dashoffset: 0;
-}
-
-.modal-language__item-svg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  fill: none;
-  stroke: rgba(0, 0, 0, 0.3);
-  stroke-dasharray: 800;
-  stroke-dashoffset: 800;
-  transition: .8s ease-in-out;
 }
 
 .modal-language__img {
@@ -503,5 +507,6 @@ img {
 
 .modal-language__soon {
   margin-top: 30px;
+  font-family: 'Nunito', sans-serif;
 }
 /*# sourceMappingURL=style.css.map */

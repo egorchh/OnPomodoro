@@ -35,12 +35,14 @@
     flex-direction: column
     align-items: center
     &__title
-      font-size: 2em
+      font-size: 30px
       font-weight: 500
       margin-bottom: 20px
+      font-family: 'Nunito', sans-serif
     &__list
       list-style: none
-      font-size: 1.5em
+      font-size: 24px
+      font-family: "Baloo Da 2", cursive
     &__item
       position: relative
       display: flex
@@ -49,30 +51,17 @@
       margin-bottom: 17px
       padding: 5px 0 5px 0
       min-width: 350px
-      // background-color: rgba(104, 104, 104, 0.2)
-      // border-radius: 7px
       cursor: pointer
       background: transparent
-      border: 1px solid rgba(104, 104, 104, 0.2)
+      border: 2.5px solid rgba(104, 104, 104, 0.2)
       border-radius: 5px
       outline: none
-      transition: 1s ease-in-out
+      transition: 0.4s ease-in-out
       &:hover
-        transition: 1s ease-in-out
         background: rgba(0, 0, 0, 0.1)
-        & svg
-          stroke-dashoffset: 0
-      &-svg
-        position: absolute
-        left: 0
-        top: 0
-        fill: none
-        stroke: rgba(0, 0, 0, 0.3)
-        stroke-dasharray: 800
-        stroke-dashoffset: 800
-        transition: .8s ease-in-out
     &__img
       width: 34px
       margin-right: 15px
     &__soon
       margin-top: 30px
+      font-family: 'Nunito', sans-serif

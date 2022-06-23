@@ -16,6 +16,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="img/favicon/apple-touch-icon.png"
@@ -142,7 +146,9 @@
             <div class="timer-counter">
               <div class="timer-counter__text">
                 <span class="timer-counter__current"> #1 </span>
-                <span class="timer-description">Time to focus!</span>
+                <span id="timeTo" class="timer-description"
+                  >Time to focus!</span
+                >
                 <span class="timer-counter__total"> #1 </span>
               </div>
             </div>
@@ -233,25 +239,25 @@
               >
               <ol id="howToUse" class="description_item-instruction">
                 <li class="instruction__item">
-                  1. <b class="bold">Add tasks</b> to work on today
+                  <b class="bold">Add tasks</b> to work on today
                 </li>
                 <li class="instruction__item">
-                  2. <b class="bold">Set estimate pomodoros</b> (1 = 25min of
-                  work) for each tasks
+                  <b class="bold">Set estimate pomodoros</b> (1 = 25min of work)
+                  for each tasks
                 </li>
                 <li class="instruction__item">
-                  3. <b class="bold">Select a task</b> to work on
+                  <b class="bold">Select a task</b> to work on
                 </li>
                 <li class="instruction__item">
-                  4. <b class="bold">Start timer</b> and focus on the task for
-                  25 minutes
+                  <b class="bold">Start timer</b> and focus on the task for 25
+                  minutes
                 </li>
                 <li class="instruction__item">
-                  5. <b class="bold">Take a break</b> for 5 minutes when the
-                  alarm ring
+                  <b class="bold">Take a break</b> for 5 minutes when the alarm
+                  ring
                 </li>
                 <li class="instruction__item">
-                  6. <b class="bold">Iterate</b> 3-5 until you finish the tasks
+                  <b class="bold">Iterate</b> 3-5 until you finish the tasks
                 </li>
               </ol>
             </li>
@@ -261,23 +267,23 @@
               >
               <ol id="features" class="description_item-instruction">
                 <li class="instruction__item">
-                  1. <b class="bold">Responsive design</b> that works with
-                  desktop and mobile
+                  <b class="bold">Responsive design</b> that works with desktop
+                  and mobile
                 </li>
                 <li class="instruction__item">
-                  2. <b class="bold">Color transition</b> to switch moods
-                  between work time and rest time
+                  <b class="bold">Color transition</b> to switch moods between
+                  work time and rest time
                 </li>
                 <li class="instruction__item">
-                  3. <b class="bold">Audio notification</b> at the end of a
-                  timer period
+                  <b class="bold">Audio notification</b> at the end of a timer
+                  period
                 </li>
                 <li class="instruction__item">
-                  4. <b class="bold">Customizable timer</b> intervals to suit
-                  your preference
+                  <b class="bold">Customizable timer</b> intervals to suit your
+                  preference
                 </li>
                 <li class="instruction__item">
-                  5. <b class="bold">Multiple interface languages</b>
+                  <b class="bold">Multiple interface languages</b>
                 </li>
               </ol>
             </li>
@@ -372,24 +378,11 @@
     <div class="modal">
       <div class="modal__container">
         <div class="modal-language">
-          <span class="modal-language__title"> Choose language </span>
+          <span id="chooseLang" class="modal-language__title">
+            Choose language
+          </span>
           <ul class="modal-language__list">
             <li id="ru" class="modal-language__item">
-              <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 350 50"
-                class="modal-language__item-svg"
-              >
-                <polyline
-                  points="349,1 349,49 1,49 1,1 349,1"
-                  class="bg-line"
-                />
-                <polyline
-                  points="349,1 349,49 1,49 1,1 349,1"
-                  class="hl-line"
-                />
-              </svg>
               <img
                 class="modal-language__img"
                 src="/img/countries/russia.png"
@@ -398,21 +391,6 @@
               <span class="modal-language__text">Russian</span>
             </li>
             <li id="en" class="modal-language__item">
-              <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 350 50"
-                class="modal-language__item-svg"
-              >
-                <polyline
-                  points="349,1 349,49 1,49 1,1 349,1"
-                  class="bg-line"
-                />
-                <polyline
-                  points="349,1 349,49 1,49 1,1 349,1"
-                  class="hl-line"
-                />
-              </svg>
               <img
                 class="modal-language__img"
                 src="/img/countries/united-kingdom.png"
@@ -421,7 +399,7 @@
               <span class="modal-language__text">English</span>
             </li>
           </ul>
-          <span class="modal-language__soon">
+          <span id="soon" class="modal-language__soon">
             More languages will be added soon ;)
           </span>
         </div>
@@ -435,7 +413,7 @@
       </div>
     </div>
     <!-- /.modal -->
-    <script src="js/script.js"></script>
-    <script src="js/langs.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/langs.js"></script>
   </body>
 </html>

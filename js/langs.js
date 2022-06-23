@@ -1,18 +1,44 @@
-const en = {
-  statisticSpan: "Statistic",
-  languageSpan: "Language",
-  settingsSpan: "Settings",
-  loginSpan: "Login",
-  pomodoro: "Pomodoro",
-  shortBreak: "Short Break",
-  longBreak: "Long Break",
-  start: "START",
-  // stop: "STOP",
-  tasks: "Tasks",
-  addTask: "Add Task",
-  descrTitle: "Boost your productivity",
-  whatIsOnPomodoro: "What is OnPomodoro?",
-  onPomodoroIs: `<b class="bold">OnPomodoro</b> is a customizable pomodoro timer
+function changeLinkColor() {
+  var descriptionLinks = document.querySelectorAll(".description__link");
+
+  if (+localStorage.getItem("timeMode") === 1499) {
+    descriptionLinks.forEach((link) => {
+      link.classList.add("pomodoro");
+      link.classList.remove("shortBreak");
+      link.classList.remove("longBreak");
+    });
+  } else if (+localStorage.getItem("timeMode") === 299) {
+    descriptionLinks.forEach((link) => {
+      link.classList.add("shortBreak");
+      link.classList.remove("longBreak");
+      link.classList.remove("pomodor");
+    });
+  } else if (+localStorage.getItem("timeMode") === 899) {
+    descriptionLinks.forEach((link) => {
+      link.classList.add("longBreak");
+      link.classList.remove("shortBreak");
+      link.classList.remove("pomodor");
+    });
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const languages = {
+    en: {
+      statisticSpan: "Statistic",
+      languageSpan: "Language",
+      settingsSpan: "Settings",
+      loginSpan: "Login",
+      pomodoro: "Pomodoro",
+      shortBreak: "Short Break",
+      longBreak: "Long Break",
+      start: "START",
+      timeTo: "Time to focus!",
+      tasks: "Tasks",
+      addTask: "Add Task",
+      descrTitle: "Boost your productivity",
+      whatIsOnPomodoro: "What is OnPomodoro?",
+      onPomodoroIs: `<b class="bold">OnPomodoro</b> is a customizable pomodoro timer
                 that works on desktop & mobile browser. The aim of this app is
                 to help you focus on any task you are working on, such as study,
                 writing, or coding. This app is inspired by
@@ -24,8 +50,8 @@ const en = {
                 >
                 which is a time management method developed by Francesco
                 Cirillo.`,
-  pomodoroTechniqueTitle: "What is Promodoro Technique?",
-  pomodoroTechnique: `
+      pomodoroTechniqueTitle: "What is Promodoro Technique?",
+      pomodoroTechnique: `
     The Pomodoro Technique is created by Francesco Cirillo for a
                 more productive way to work and study. The technique uses a
                 timer to break down work into intervals, traditionally 25
@@ -34,60 +60,60 @@ const en = {
                 the tomato-shaped kitchen timer that Cirillo used as a
                 university student -
                 <a
-                  class="description__link"
+                  class="description__link"         
                   href="https://todoist.com/productivity-methods/pomodoro-technique"
                   target="_blank"
                   >Wikipedia</a
                 >
-  `,
-  howToUseTitle: `How to use Promodoro Timer?`,
-  howToUse: `
+    `,
+      howToUseTitle: `How to use Promodoro Timer?`,
+      howToUse: `
     <li class="instruction__item">
-      1. <b class="bold">Add tasks</b> to work on today
+      <b class="bold">Add tasks</b> to work on today
     </li>
     <li class="instruction__item">
-      2. <b class="bold">Set estimate pomodoros</b> (1 = 25min of
+      <b class="bold">Set estimate pomodoros</b> (1 = 25min of
       work) for each tasks
     </li>
     <li class="instruction__item">
-      3. <b class="bold">Select a task</b> to work on
+      <b class="bold">Select a task</b> to work on
     </li>
     <li class="instruction__item">
-      4. <b class="bold">Start timer</b> and focus on the task for
+      <b class="bold">Start timer</b> and focus on the task for
       25 minutes
     </li>
     <li class="instruction__item">
-      5. <b class="bold">Take a break</b> for 5 minutes when the
+      <b class="bold">Take a break</b> for 5 minutes when the
       alarm ring
     </li>
     <li class="instruction__item">
-      6. <b class="bold">Iterate</b> 3-5 until you finish the tasks
+      <b class="bold">Iterate</b> 3-5 until you finish the tasks
     </li>
-  `,
-  featuresTitle: `Features`,
-  features: `
+    `,
+      featuresTitle: `Features`,
+      features: `
     <li class="instruction__item">
-      1. <b class="bold">Responsive design</b> that works with
+      <b class="bold">Responsive design</b> that works with
       desktop and mobile
     </li>
     <li class="instruction__item">
-      2. <b class="bold">Color transition</b> to switch moods
+      <b class="bold">Color transition</b> to switch moods
       between work time and rest time
     </li>
     <li class="instruction__item">
-      3. <b class="bold">Audio notification</b> at the end of a
+      <b class="bold">Audio notification</b> at the end of a
       timer period
     </li>
     <li class="instruction__item">
-      4. <b class="bold">Customizable timer</b> intervals to suit
+      <b class="bold">Customizable timer</b> intervals to suit
       your preference
     </li>
     <li class="instruction__item">
-      5. <b class="bold">Multiple interface languages</b>
+      <b class="bold">Multiple interface languages</b>
     </li>
-  `,
-  aboutTitle: "About author and project",
-  about: `
+    `,
+      aboutTitle: "About author and project",
+      about: `
     Hi! My name is
     <a
       class="description__link"
@@ -105,95 +131,98 @@ const en = {
       >Pomofocus</a
     >
     .
-  `,
-  home: "home",
-  privacy: "privacy",
-  contacts: "contacts",
-  simplePage: "simple page",
-  madeWithLove: "Made with love by Egor Podolskij",
-};
-
-const ru = {
-  statisticSpan: "Статистика",
-  languageSpan: "Выбрать язык",
-  settingsSpan: "Настройки",
-  loginSpan: "Войти",
-  pomodoro: "Помодоро",
-  shortBreak: "Короткий перерыв",
-  longBreak: "Длинный перерыв",
-  start: "СТАРТ",
-  // stop: "СТОП",
-  tasks: "Задачи",
-  addTask: "Добавить задачу",
-  descrTitle: "Улучшите свою продуктивность",
-  whatIsOnPomodoro: `Что такое <a
+    `,
+      home: "home",
+      privacy: "privacy",
+      contacts: "contacts",
+      simplePage: "simple page",
+      madeWithLove: "Made with love by Egor Podolskij",
+      chooseLang: "Choose language",
+      soon: "More languages will be added soon ;)",
+    },
+    ru: {
+      statisticSpan: "Статистика",
+      languageSpan: "Выбрать язык",
+      settingsSpan: "Настройки",
+      loginSpan: "Войти",
+      pomodoro: "Помодоро",
+      shortBreak: "Перерыв",
+      longBreak: "Долгий перерыв",
+      start: "СТАРТ",
+      timeTo: "Время учиться!",
+      tasks: "Задачи",
+      addTask: "Добавить задачу",
+      descrTitle: "Улучшите свою продуктивность",
+      whatIsOnPomodoro: `Что такое <a
                   class="description__link"
                   href="#"
                   >OnPomodoro</a
                 >?`,
-  onPomodoroIs: `<a
+      onPomodoroIs: `<a
+            
                   class="description__link"
                   href="#"
                   >OnPomodoro</a
                 > - настраиваемый таймер, работающий как на десктопе, так и на мобильном устройстве. Цель этого приложения - помочь вам сосредоточиться на любой задаче, над которой вы работаете, такой как обучение или кодирование. Это приложение вдохновлено 
                 <a
-                  class="description__link"
+                  class="description__link"           
                   href="https://todoist.com/productivity-methods/pomodoro-technique"
                   target="_blank"
                   >Pomodoro Technique</a
                 >
                 , методом управления временем, разработанный Франческо Сирильо.`,
-  pomodoroTechniqueTitle: "Что из себя представляет методика Помодоро?",
-  pomodoroTechnique: `
+      pomodoroTechniqueTitle: "Что из себя представляет методика Помодоро?",
+      pomodoroTechnique: `
     Методика Помодоро создана Франческо Сирильо для более продуктивной работы и обучения. Методика использует таймер, чтобы разбить работу на интервалы, традиционно длиной 25 минут, разделённые короткими перерывами. Каждый интервал известен как помодоро, от итальянского слова «томат», после томатообразного кухонного таймера, который Сирильо использовал, когда был студентом университета -
                 <a
                   class="description__link"
+            
                   href="https://todoist.com/productivity-methods/pomodoro-technique"
                   target="_blank"
                   >Wikipedia</a
                 >
-  `,
-  howToUseTitle: `Как пользоваться таймером Помодоро?`,
-  howToUse: `
+    `,
+      howToUseTitle: `Как пользоваться таймером Помодоро?`,
+      howToUse: `
     <li class="instruction__item">
-      1. <b class="bold">Добавьте задачи</b>, требующие решения
+      <b class="bold">Добавьте задачи</b>, требующие решения
     </li>
     <li class="instruction__item">
-      2. <b class="bold">Установите помодорки</b> (1 = 25мин. работы) для каждой из задач
+      <b class="bold">Установите помодорки</b> (1 = 25мин. работы) для каждой из задач
     </li>
     <li class="instruction__item">
-      3. <b class="bold">Выберите задачу</b>, над которой хотите поработать
+      <b class="bold">Выберите задачу</b>, над которой хотите поработать
     </li>
     <li class="instruction__item">
-      4. <b class="bold">Запустите таймер</b> и сфокусируйтесь на решении задачи в течение 25 минут
+      <b class="bold">Запустите таймер</b> и сфокусируйтесь на решении задачи в течение 25 минут
     </li>
     <li class="instruction__item">
-      5. <b class="bold">Отдохните</b> в течение 5 минут, когда будильник зазвенит
+      <b class="bold">Отдохните</b> в течение 5 минут, когда будильник зазвенит
     </li>
     <li class="instruction__item">
-      6. <b class="bold">Повторяйте</b> пункты 3-5, пока задача не будет решена
+      <b class="bold">Повторяйте</b> пункты 3-5, пока задача не будет решена
     </li>
-  `,
-  featuresTitle: `Особенности`,
-  features: `
+    `,
+      featuresTitle: `Особенности`,
+      features: `
     <li class="instruction__item">
-      1. <b class="bold">Отзывчивый дизайн</b>, который работает как с десктопами, так и с мобильными устройствами
-    </li>
-    <li class="instruction__item">
-      2. <b class="bold">Цветовой переход</b> при смене режима работы
+      <b class="bold">Отзывчивый дизайн</b>, который работает как с десктопами, так и с мобильными устройствами
     </li>
     <li class="instruction__item">
-      3. <b class="bold">Звуковое уведомление</b> в конце каждого временного периода
+      <b class="bold">Цветовой переход</b> при смене режима работы
     </li>
     <li class="instruction__item">
-      4. <b class="bold">Настраиваемые интервалы</b> таймера
+      <b class="bold">Звуковое уведомление</b> в конце каждого временного периода
     </li>
     <li class="instruction__item">
-      5. <b class="bold">Возможность переключения языка</b> интерфейса
+      <b class="bold">Настраиваемые интервалы</b> таймера
     </li>
-  `,
-  aboutTitle: "Об авторе и проекте",
-  about: `
+    <li class="instruction__item">
+      <b class="bold">Возможность переключения языка</b> интерфейса
+    </li>
+    `,
+      aboutTitle: "Об авторе и проекте",
+      about: `
     Привет! Меня зовут
     <a
       class="description__link"
@@ -209,41 +238,72 @@ const ru = {
       >Pomofocus</a
     >
     .
-  `,
-  home: "домашняя страница",
-  privacy: "приватность",
-  contacts: "контакты",
-  simplePage: "упрощённая страница",
-  madeWithLove: "Cделано с любовью <3",
-};
+    `,
+      home: "домашняя страница",
+      privacy: "приватность",
+      contacts: "контакты",
+      simplePage: "упрощённая страница",
+      madeWithLove: "Сделано с любовью <3",
+      chooseLang: "Выберите язык",
+      soon: "Другие языки находятся в разработке ;)",
+    },
+  };
 
-const ruLang = document.getElementById("ru"),
-  enLang = document.getElementById("en");
+  getLocalLang();
 
-ruLang.addEventListener("click", () => {
-  changeLang(ru);
-});
+  const ruLang = document.getElementById("ru"),
+    enLang = document.getElementById("en");
 
-enLang.addEventListener("click", () => {
-  changeLang(en);
-});
+  ruLang.addEventListener("click", () => {
+    changeLang(languages.ru);
+    saveLocalLang("ru");
+    document.body.style.fontFamily = "'Nunito', sans-serif";
+  });
 
-function changeLang(language) {
-  let objLength = Object.getOwnPropertyNames(language).length;
-  for (var i = 0; i <= objLength - 1; i++) {
-    let objKey = Object.getOwnPropertyNames(language)[i];
-    if (document.getElementById(objKey) === null) {
-      document.querySelector(`[data-name=${objKey}]`).innerText = func(objKey);
-    } else {
-      document.getElementById(objKey).innerHTML = func(objKey);
-    }
-  }
+  enLang.addEventListener("click", () => {
+    changeLang(languages.en);
+    saveLocalLang("en");
+    document.body.style.fontFamily = '"Baloo Da 2", cursive';
+  });
 
-  function func(a) {
-    for (let key in language) {
-      if (key === a) {
-        return language[key];
+  function changeLang(language) {
+    let objLength = Object.getOwnPropertyNames(language).length;
+
+    for (var i = 0; i <= objLength - 1; i++) {
+      let objKey = Object.getOwnPropertyNames(language)[i];
+      if (document.getElementById(objKey) === null) {
+        document.querySelector(`[data-name=${objKey}]`).innerText =
+          func(objKey);
+      } else {
+        document.getElementById(objKey).innerHTML = func(objKey);
       }
     }
+
+    function func(a) {
+      for (let key in language) {
+        if (key === a) {
+          return language[key];
+        }
+      }
+    }
+
+    changeLinkColor();
   }
-}
+
+  function saveLocalLang(language) {
+    localStorage.setItem("language", language);
+  }
+
+  function getLocalLang() {
+    let currentLang = localStorage.getItem("language");
+
+    if (currentLang === "ru") {
+      changeLang(languages.ru);
+      document.body.style.fontFamily = "'Nunito', sans-serif";
+    } else if (currentLang === "en" || currentLang === null) {
+      changeLang(languages.en);
+    }
+  }
+});
+
+export default changeLinkColor;
